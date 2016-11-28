@@ -22,11 +22,11 @@ public class HomeMonitor
       temperatureSystem.turnOn();
     }
 
-    //TODO: implement getState in each system
     public State getState(System s) {
       return s.getState();
     }
 
+    //TODO: implement modes
     public void dayModeAll() {
 
     }
@@ -36,7 +36,7 @@ public class HomeMonitor
     }
 
     public void awayModeAll() {
-      
+
     }
 
 }
