@@ -1,6 +1,7 @@
 public abstract class System {
   State state;
-  
-  public void turnOff() {}
-  public void turnOn() {}
+
+  public abstract void turnOff() {}
+  public abstract void turnOn() {}
+  public State getState() { return state; }
 }
