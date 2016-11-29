@@ -2,10 +2,12 @@ import java.rmi.*;
 
 public class HomeMonitorTestDrive {
   public static void main(String[] args) {
-    HomeMonitor myHomeMonitor = new HomeMonitor();
     try {
+
+      HomeMonitor myHomeMonitor = new HomeMonitor();
+      
       Naming.rebind("RemoteHomeMonitor", myHomeMonitor);
-    } catch (Exception ex) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }

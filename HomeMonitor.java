@@ -6,16 +6,11 @@ public class HomeMonitor
 
     private static final long serialVersionUID = 2L;
 
-    HomeAlarmSystem alarmSystem;
-    HomeLightsSystem lightsSystem;
-    HomeTemperatureSystem temperatureSystem; 
+    HomeAlarmSystem alarmSystem = new HomeAlarmSystem();
+    HomeLightsSystem lightsSystem = new HomeLightsSystem();
+    HomeTemperatureSystem temperatureSystem = new HomeTemperatureSystem(); 
 
-    public HomeMonitor(HomeAlarmSystem myAlarmSystem, HomeLightsSystem myLightsSystem, 
-                    HomeTemperatureSystem myTemperatureSystem) throws RemoteException{
-      alarmSystem = myAlarmSystem;
-      lightsSystem = myLightsSystem;
-      temperatureSystem = myTemperatureSystem;
-    }
+    public HomeMonitor() throws RemoteException {}
 
     public void turnOffAll() {
       alarmSystem.turnOff();
@@ -29,8 +24,16 @@ public class HomeMonitor
       temperatureSystem.turnOn();
     }
 
-    public String getState(HomeSystem s) {
-      return s.getState().toString();
+    public String getAlarmSystemState() {
+      return alarmSystem.getState().toString();
+    }
+
+    public String getLightsSystemState() {
+      return lightsSystem.getState().toString();
+    }
+
+    public String getTemperatureSystemState() {
+      return temperatureSystem.getState().toString();
     }
 
     public void dayModeAll() {
