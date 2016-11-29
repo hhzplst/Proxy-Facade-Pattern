@@ -1,5 +1,3 @@
-import java.io.*;
-  
-public interface State extends Serializable {
-  
+public interface State {
+  public String toString();
 }

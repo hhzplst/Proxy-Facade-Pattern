@@ -22,8 +22,8 @@ public class HomeMonitor
       temperatureSystem.turnOn();
     }
 
-    public State getState(System s) {
-      return s.getState();
+    public String getState(System s) {
+      return s.getState().toString();
     }
 
     //TODO: implement modes
