@@ -10,6 +10,13 @@ public class HomeMonitor
     HomeLightsSystem lightsSystem;
     HomeTemperatureSystem temperatureSystem; 
 
+    public HomeMonitor(HomeAlarmSystem myAlarmSystem, HomeLightsSystem myLightsSystem, 
+                    HomeTemperatureSystem myTemperatureSystem) throws RemoteException{
+      alarmSystem = myAlarmSystem;
+      lightsSystem = myLightsSystem;
+      temperatureSystem = myTemperatureSystem;
+    }
+
     public void turnOffAll() {
       alarmSystem.turnOff();
       lightsSystem.turnOff();
@@ -22,21 +29,27 @@ public class HomeMonitor
       temperatureSystem.turnOn();
     }
 
-    public String getState(System s) {
+    public String getState(HomeSystem s) {
       return s.getState().toString();
     }
 
-    //TODO: implement modes
     public void dayModeAll() {
-
+      //assuming day mode is ready mode for alarm system
+      alarmSystem.setReadyMode();
+      lightsSystem.setDayMode();
+      temperatureSystem.setDayMode();
     }
 
     public void nightModeAll() {
-
+      alarmSystem.setSleepMode();
+      lightsSystem.setSleepMode();
+      temperatureSystem.setNightMode();
     }
 
     public void awayModeAll() {
-
+      alarmSystem.setAwayMode();
+      lightsSystem.setAwayMode();
+      temperatureSystem.setAwayMode();
     }
 
 }

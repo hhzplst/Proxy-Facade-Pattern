@@ -1,4 +1,4 @@
-public class HomeAlarmSystem extends System {
+public class HomeAlarmSystem extends HomeSystem {
 
   public void turnOff() {
     state = new HomeAlarmOffState();
@@ -20,5 +20,5 @@ public class HomeAlarmSystem extends System {
   public void setAwayMode() {
     state = new HomeAlarmAwayMode();
   }
-  
+
 }

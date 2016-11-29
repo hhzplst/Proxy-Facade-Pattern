@@ -1,4 +1,4 @@
-public class HomeTemperatureSystem extends System {
+public class HomeTemperatureSystem extends HomeSystem {
 
   public void turnOff() {
     state = new HomeTemperatureOffState();

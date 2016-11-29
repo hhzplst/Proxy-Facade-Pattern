@@ -1,4 +1,4 @@
-public class HomeLightsSystem extends System {
+public class HomeLightsSystem extends HomeSystem {
 
   public void turnOff() {
     state = new HomeLightsOffState();
