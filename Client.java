@@ -6,14 +6,20 @@ public class Client {
     RemoteHomeMonitor service = null;
 
     try {
-      service = (RemoteHomeMonitor) Naming.lookup("rmi://127.0.0.1/RemoteHomeMonitor");
+      service = (RemoteHomeMonitor) Naming.lookup("RemoteHomeMonitor");
 
       service.turnOnAll();
       service.awayModeAll();
-      service.getTemperatureSystemState();
-      
+      System.out.println(service.getTemperatureSystemState());
+
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 }
+
+/***************************OUTPUT*****************************
+
+Home Temperature control is in away mode.
+
+**************************************************************/
