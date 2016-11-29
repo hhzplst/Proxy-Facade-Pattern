@@ -20,4 +20,5 @@ public class HomeAlarmSystem extends System {
   public void setAwayMode() {
     state = new HomeAlarmAwayMode();
   }
+  
 }
