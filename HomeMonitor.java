@@ -12,6 +12,7 @@ public class HomeMonitor
 
     public HomeMonitor() throws RemoteException {}
 
+    //Facade Pattern
     public void turnOffAll() {
       alarmSystem.turnOff();
       lightsSystem.turnOff();
